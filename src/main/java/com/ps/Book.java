@@ -81,18 +81,10 @@ public void checkOut(String name) {
 
 
 
-    if (!isCheckedOut) {
-        isCheckedOut = true;
-        checkedOutTo = name;
 
-    } else {
-        System.out.println("The book is already checked out.");
-    }
-}
 
 public void checkIn() {
-    isCheckedOut = false;
-    checkedOutTo = "";
+    
 } }
 
 
