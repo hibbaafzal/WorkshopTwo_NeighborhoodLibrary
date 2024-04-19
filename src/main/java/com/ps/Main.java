@@ -1,6 +1,4 @@
-
-
-                 package com.ps;
+package com.ps;
 
 import java.util.*;
 
