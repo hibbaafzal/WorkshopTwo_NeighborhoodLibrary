@@ -15,10 +15,11 @@ public class Book {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
-      //  this.isCheckedOut = false;
-      //  this.checkedOutTo = null;
+        //  this.isCheckedOut = false;
+        //  this.checkedOutTo = null;
     }
-        // getters
+
+    // getters
     public int getId() {
         return id;
     }
@@ -73,19 +74,15 @@ public class Book {
                 '}';
     }
 
+    // Methods
+    public void checkOut(String name) {
+    }
 
+    public void checkIn() {
 
+    }
+}
 
-// Methods
-public void checkOut(String name) {
-
-
-
-
-
-public void checkIn() {
-    
-} }
 
 
 
