@@ -1,4 +1,6 @@
-package com.ps;
+
+
+                 package com.ps;
 
 import java.util.*;
 
@@ -29,93 +31,112 @@ public class Main {
         Book book20 = new Book(20, "0-6078-5613-0", "Thank You For Sharing");
 
 
-
         Book[] bookInventory = {book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15, book16, book17, book18, book19, book20};
 
         // asking user
-                int command;
-                do {
-                    System.out.println("Please Choose an Option.");
-                    System.out.println("\t1. Show Available Books.");
-                    System.out.println("\t2. Show Checked Out Books.");
-                    System.out.println("\t3. Exit.");
+        int mainMenu;
 
-                    Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("Please Choose an Option.");
+            System.out.println("\t1. Show Available Books.");
+            System.out.println("\t2. Show Checked Out Books.");
+            System.out.println("\t3. Exit.");
 
-                    command = scanner.nextInt();
+            Scanner scanner = new Scanner(System.in);
 
-                    switch (command) {
-                        case 1:
-                            System.out.println("Show Available Books: ");
-                            for (Book book : bookInventory) {
-                                System.out.println(book.toString());
-                            }
-                            int choice;
-                            do {
-                                System.out.println("Choose an Option:");
-                                System.out.println("\t1. Check Out a Book.");
-                                System.out.println("\t2. Exit.");
-                                choice = scanner.nextInt();
+            mainMenu = scanner.nextInt();
 
-                                switch (choice) {
-                                    case 1:
-                                        System.out.println("Selected: Check Out");
+            switch (mainMenu) {
+                case 1:
+                    System.out.println("Show Available Books: ");
+                    for (Book book : bookInventory) {
+                        System.out.println(book.toString());
 
-                                        String option;
-                                        do {
-                                            String fname;
-                                           System.out.println ("Enter your full name.");
+                        if (!book.isCheckedOut()) {
+                            System.out.println(book);
+                        }
+                    }
 
-                                            System.out.println ("Click \"B\" to go back");
-                                            option = scanner.nextLine();
+                    int checkOut;
+                    do {
+                        System.out.println("Choose an Option:");
+                        System.out.println("\t1. Check Out a Book.");
+                        System.out.println("\t2. Exit.");
 
-                                       } while (option != "B");
+                        checkOut = scanner.nextInt();
+
+                        switch (checkOut) {
+                            case 1:
+                                System.out.println("Selected: Check Out");
 
 
-                                            break;
+                                int checkOut2;
+                                do {
 
-                                            case 2:
+                                    System.out.println("Enter your full name.");
+                                    System.out.println("Press '2' to go back.");
+                                    checkOut2 = scanner.nextInt();
 
-                                                System.out.println("Selected: Exit");
-                                                break;
-                                            default:
-                                                System.out.println("Invalid Choice.");
-                                        }
-                                } while (choice != 2) ;
+                                    String name = scanner.nextLine();
+
+
+                                } while (checkOut != 2);
                                 break;
 
+                            case 2:
+                                System.out.println("Selected: Exit");
+                                break;
 
-                        case 2:
-                            System.out.println("Show Checked out Books");
-                            String bookCommand;
+                            default:
+                                System.out.println("Invalid Choice.");
+                        }
+                    } while (checkOut != 2);
 
-                            do {
-                                System.out.println("Choose an Option.");
-                                System.out.println("\tClick 'C' to check in a book");
-                                System.out.println("\tClick 'X' to exit");
-                                bookCommand = scanner.next();
+                    break;
 
-                                switch (bookCommand.toUpperCase()) {
-                                    case "C":
-                                        System.out.println("Selected: Check in a book");
-                                        System.out.println("Enter ID of the book you want to check in.");
 
-                                        break;
-                                    case "X":
-                                        System.out.println("Selected: Exit");
-                                        break;
-                                    default:
-                                        System.out.println("Command not found.");
+                case 2:
+                    System.out.println("Show Checked out Books");
+
+                    int checkIn;
+
+                    do {
+                        System.out.println("Choose an Option.");
+                        System.out.println("\tClick '1' to check in a book");
+                        System.out.println("\tClick '2' to exit");
+                        checkIn = scanner.nextInt();
+
+                        switch (checkIn) {
+                            case 1:
+                                System.out.println("Selected: Check in a book");
+                                System.out.println("Enter ID of the book you want to check in.");
+
+                                int command5 = scanner.nextInt();
+                                System.out.println("Congrats: Your book is now checked out!");
+
+
+                                for (Book book : bookInventory) {
+                                    System.out.println(book.toString());
                                 }
-                            } while (!bookCommand.equalsIgnoreCase("X"));
-                            break;
+                                break;
+                            case 2:
+                                System.out.println("Selected: Exit");
+                                break;
+                            default:
+                                System.out.println("Command not found.");
+                        }
+                    } while (checkIn != 2);
+                    break;
 
-                        case 3:
-                            System.out.println("Exiting program.");
-                            break;
+                case 3:
+                    System.out.println("Exiting program.");
+                    break;
 
-                        default:
-                            System.out.println("Invalid Command.");
-                    }
-                    } while (command != 3) ;
-                } }
+                default:
+                    System.out.println("Invalid Command.");
+            }
+
+        } while (mainMenu != 3);
+    }
+}
+
