@@ -49,10 +49,6 @@ public class Main {
                     System.out.println("Show Available Books: ");
                     for (Book book : bookInventory) {
                         System.out.println(book.toString());
-
-                        if (!book.isCheckedOut()) {
-                            System.out.println(book);
-                        }
                     }
 
                     int checkOut;
@@ -65,20 +61,11 @@ public class Main {
 
                         switch (checkOut) {
                             case 1:
-                                System.out.println("Selected: Check Out");
+                                System.out.println("Enter your full name.");
+                                scanner.nextLine();
+                                String name = scanner.nextLine();
+                                System.out.println("Name: " + name);
 
-
-                                int checkOut2;
-                                do {
-
-                                    System.out.println("Enter your full name.");
-                                    System.out.println("Press '2' to go back.");
-                                    checkOut2 = scanner.nextInt();
-
-                                    String name = scanner.nextLine();
-
-
-                                } while (checkOut != 2);
                                 break;
 
                             case 2:
