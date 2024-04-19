@@ -64,7 +64,10 @@ public class Main {
                                 System.out.println("Enter your full name.");
                                 scanner.nextLine();
                                 String name = scanner.nextLine();
+                                System.out.println("Enter ID of the book you want to check in.");
+                                int command = scanner.nextInt();
                                 System.out.println("Name: " + name);
+                                System.out.println("Success!");
 
                                 break;
 
