@@ -20,7 +20,7 @@ When an invalid command is put in, then the output is "Invalid"
 
 An interesting piece of Code were the nested do while loops. 
 
-switch (bookCommand.toUpperCase()) {
+                              switch (bookCommand.toUpperCase()) {
                                     case "C":
                                         System.out.println("Selected: Check in a book");
                                         System.out.println("Enter ID of the book you want to check in.");
